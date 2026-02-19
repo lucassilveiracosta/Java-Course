@@ -1,4 +1,4 @@
-package basic.loops.exercises;
+package basic.loops.exercises1;
 
 import java.util.Locale;
 import java.util.Scanner;
