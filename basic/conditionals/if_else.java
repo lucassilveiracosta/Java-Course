@@ -8,14 +8,14 @@ public class if_else {
         Scanner sc = new Scanner(System.in);
         int idade;
 
-        System.out.printf("Quantos anos você tem?\n> ");
+        System.out.printf("How old are you?\n> ");
         idade = sc.nextInt();
 
         if(idade < 18) {
-            System.out.println("Você é menor de idade");
+            System.out.println("You are underage");
         }
         else{
-            System.out.println("Você é maior de idade");
+            System.out.println("you are of a legal age");
         }
         sc.close();
     }
