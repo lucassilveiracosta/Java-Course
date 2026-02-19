@@ -1,4 +1,3 @@
-package challenges;
 import java.util.Locale;
 
 public class Problem1 {

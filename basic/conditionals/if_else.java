@@ -11,11 +11,11 @@ public class if_else {
         System.out.printf("How old are you?\n> ");
         idade = sc.nextInt();
 
-        if(idade < 18) {
+        if(idade < 18) {   // Operador SE(Cláusula)
             System.out.println("You are underage");
         }
-        else{
-            System.out.println("you are of a legal age");
+        else{              // Operador SE NÃO
+            System.out.println("You are of a legal age");
         }
         sc.close();
     }
