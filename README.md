@@ -5,5 +5,5 @@ Este repositório contém os exercícios, projetos e anotações que estou desen
 ## 🚀 Tecnologias Utilizadas
 
 * **Java JDK** (Versão 17 ou superior)
-* **IDE:** IntelliJ IDEA / Eclipse / VS Code (escolha a sua)
+* **IDE:** VS Code 
 * **Git & GitHub** para versionamento
