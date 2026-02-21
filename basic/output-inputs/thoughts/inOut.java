@@ -7,12 +7,12 @@ public class inOut {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        System.out.printf("Digite onde esta o centro da esfera\n> ");
+        System.out.printf("Digite onde esta o centro da círculo\n> ");
         double cx = sc.nextDouble();
         System.out.printf("> ");
         double cy = sc.nextDouble();
 
-        System.out.printf("\nDigite o raio da esfera\n> ");
+        System.out.printf("\nDigite o raio da círculo\n> ");
         double radius = sc.nextDouble();
 
         System.out.printf("\nDigite o ponto para a verificação\n> ");
@@ -24,15 +24,14 @@ public class inOut {
 
         pos(radius, dist);
         sc.close();
-
     }
 
     public static void pos(double radius, double dist) {
         if(dist > radius){
-            System.out.printf("\n\nO ponto não pertence a esfera por %.1f", dist - radius);
+            System.out.printf("\n\nO ponto não pertence ao círculo por %.1f", dist - radius);
         }
         else {
-            System.out.println("O ponto pertence a esfera!");
+            System.out.println("O ponto pertence a círculo!");
         }
     }
 
