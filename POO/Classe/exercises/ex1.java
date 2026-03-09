@@ -13,7 +13,7 @@ public class ex1 {
         Rectangle form;
         form = new Rectangle();
 
-        System.out.printf("Enter the width of the rectangle\n> ");
+        System.out.print("Enter the width of the rectangle\n> ");
         form.width = sc.nextDouble();
 
         System.out.printf("Enter the height of the rectangle\n> ");
