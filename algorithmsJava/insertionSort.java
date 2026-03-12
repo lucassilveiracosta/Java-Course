@@ -1,16 +1,20 @@
 package algorithmsJava;
+
+import java.util.Scanner;
+
 public class insertionSort {
     public static void main(String[] args) {
         
-        int n = 5;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Quantos numeros para fazer o sort?\n> ");
+        int n = sc.nextInt();
 
         int[] vect = new int[n];
 
-        vect[0] = 3;
-        vect[1] = 5;
-        vect[2] = 1;
-        vect[3] = 4;
-        vect[4] = 2;
+        for(int i = 0; i < n ; i++) {
+            System.out.printf("vect[%d]: ", i);
+            vect[i] = sc.nextInt();
+        }
 
         for(int j = 1; j < n; j++) { // 0 -> 4
 
@@ -33,5 +37,6 @@ public class insertionSort {
         for(int i = 0; i < n; i++) {
             System.out.println(vect[i]);
         }
+        sc.close();
     }
 }
