@@ -16,7 +16,7 @@ public class ex1 {
         System.out.print("Enter the width of the rectangle\n> ");
         form.width = sc.nextDouble();
 
-        System.out.printf("Enter the height of the rectangle\n> ");
+        System.out.print("Enter the height of the rectangle\n> ");
         form.height = sc.nextDouble();
 
         System.out.printf("\nAREA: %.1f\n", form.area());
