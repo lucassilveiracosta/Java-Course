@@ -22,5 +22,6 @@ public class main {
             default -> System.out.println("Preguiça para pegar um numero maior q 6");
         }
 
+        sc.close();
     }
 }
