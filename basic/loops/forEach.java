@@ -6,7 +6,7 @@ public class forEach {
         
         String[] vect = new String[] { "Lucas" , "Kimmy" , "KimmyJr" };
 
-        for(String obj: vect) { // para cada elemento do vetor, o obj se torna o elementoe vai andando de 1 em 1
+        for(String obj: vect) { // para cada elemento do vetor, o obj se torna o elemento e vai andando de 1 em 1
             System.out.println(obj);
         }
     }
