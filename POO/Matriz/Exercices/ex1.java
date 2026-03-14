@@ -32,14 +32,19 @@ public class ex1 {
         
         System.out.println("\n-----------------------------------\n");
        
+
+        int cont = 0;
+
         System.out.println("Negativo");
         for(int i = 0; i < n; i++) {
             for(int j = 0; j < n; j++) {
                 if(matrix[i][j] < 0) {
                     System.out.printf("Matriz[%d][%d]: %d\n", i+1,j+1, matrix[i][j]);
+                    cont++;
                 }
             }
         }
+        System.out.printf("Números negativos na matriz: %d", cont);
         sc.close();
     }
 }
