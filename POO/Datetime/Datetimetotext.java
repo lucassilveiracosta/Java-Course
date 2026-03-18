@@ -1,8 +1,11 @@
 package POO.Datetime;
 
+import java.sql.Date;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Datetimetotext {
@@ -14,6 +17,7 @@ public class Datetimetotext {
 
         DateTimeFormatter fmt1 = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
+        DateTimeFormatter fmt3 = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm").withZone(ZoneId.systemDefault());
 
         System.out.println("d04 = " + d04.format(fmt1));
         System.out.println("d04 = " + fmt1.format(d04));
@@ -21,6 +25,7 @@ public class Datetimetotext {
 
         System.out.println("\nd05 = " + d05.format(fmt1));
         System.out.println("d05 = " + d05.format(fmt2));
+        System.out.println("d06 = " + fmt3.format(d06));// formatando com TimeZone
 
     }
 }
