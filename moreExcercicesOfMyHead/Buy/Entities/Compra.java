@@ -1,24 +1,32 @@
 package moreExcercicesOfMyHead.Buy.Entities;
 
+import java.time.LocalDateTime;
+
 public class Compra {
-    private int id;
     private Produto produto;
     private Cliente cliente;
+    private final LocalDateTime createdAt;
 
-    public Compra(int id, Produto produto, Cliente cliente) {
+    public Compra(Produto produto, Cliente cliente, LocalDateTime createdAt) {
         if(produto != null || cliente != null) {
-            this.id = id;
-            this.produto = produto;
-            this.cliente = cliente;
+            if(cliente.getEndereco() != null) {
+                this.produto = produto;
+                this.cliente = cliente;
+                this.createdAt = createdAt;
+            }
+            else {
+                throw new RuntimeException("Para a compra é necessário um endereço");
+            }
         }
         else {
             throw new RuntimeException("Produto ou Cliente nulos.");
         }
     }
 
-    public int getId() {
-        return id;
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
     }
+
     public Produto getProduto() {
         return produto;
     }

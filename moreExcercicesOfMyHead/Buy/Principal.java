@@ -2,9 +2,11 @@ package moreExcercicesOfMyHead.Buy;
 
 import com.sun.nio.sctp.AbstractNotificationHandler;
 import moreExcercicesOfMyHead.Buy.Entities.Cliente;
+import moreExcercicesOfMyHead.Buy.Entities.Compra;
 import moreExcercicesOfMyHead.Buy.Entities.Produto;
 
 import java.lang.reflect.GenericDeclaration;
+import java.time.LocalDateTime;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -23,7 +25,7 @@ public class Principal {
         for(int i = 0; i < nProdutos; i++) {
             System.out.print("Digite o nome do produto: ");
             String produtoNome = sc.next();
-            System.out.println("Digite o tipo do produto: "); //Produtos criados com id autoincrementado
+            System.out.print("Digite o tipo do produto: "); //Produtos criados com id autoincrementado
             String tipoProduto = sc.next();
 
             produtos[i] = new Produto(i, produtoNome, tipoProduto);
@@ -35,7 +37,7 @@ public class Principal {
         String cpfCliente = sc.next();
         System.out.print("Qual o seu Email: ");
         String emailCliente = sc.next();
-        System.out.println("Deseja adicionar endereço?");
+        System.out.print("Deseja adicionar endereço? ( s - sim | n - não ): ");
         char opcao = sc.next().charAt(0);
         String enderecoCliente = null;
         if(opcao == 's' || opcao == 'S') {
@@ -43,11 +45,28 @@ public class Principal {
             enderecoCliente = sc.next();
         }
 
+        Cliente cliente = new Cliente(null, null, null, null);
         if(enderecoCliente != null) {
-            Cliente cliente = new Cliente(nomeCliente, cpfCliente, emailCliente, enderecoCliente);
+            cliente = new Cliente(nomeCliente, cpfCliente, emailCliente, enderecoCliente);
         }
         else {
-            Cliente cliente = new Cliente(nomeCliente, cpfCliente, emailCliente);
+            cliente = new Cliente(nomeCliente, cpfCliente, emailCliente);
         }
+        System.out.println("Qual produto você deseja comprar? ");
+        for(int i = 0; i < nProdutos; i++) {
+            System.out.printf("Produto 1: %s", produtos[i].getNome());
+        }
+
+        System.out.print("\nDigite aqui: ");
+
+        int idProdutoComprar = sc.nextInt();
+        Compra compra = new Compra(produtos[idProdutoComprar], cliente, LocalDateTime.now());
+
+        System.out.println("Registro da compra:");
+        System.out.println("Nome: " + cliente.getNome());
+        System.out.println("Endereço: " + cliente.getEndereco());
+        System.out.println("Nome do Produto " + produtos[idProdutoComprar].getNome());
+        System.out.println("Tipo do Produto " + produtos[idProdutoComprar].getType());
+        System.out.println("Data da compra: " + compra.getCreatedAt());
     }
 }
