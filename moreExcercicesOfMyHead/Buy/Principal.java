@@ -54,9 +54,9 @@ public class Principal {
         }
         System.out.println("Qual produto você deseja comprar? ");
         for(int i = 0; i < nProdutos; i++) {
-            System.out.printf("Produto 1: %s", produtos[i].getNome());
+            System.out.printf("Produto %d: %s\n",i , produtos[i].getNome());
         }
-
+        sc.nextLine();
         System.out.print("\nDigite aqui: ");
 
         int idProdutoComprar = sc.nextInt();
