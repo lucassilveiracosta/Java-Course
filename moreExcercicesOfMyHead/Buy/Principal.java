@@ -1,11 +1,9 @@
 package moreExcercicesOfMyHead.Buy;
 
-import com.sun.nio.sctp.AbstractNotificationHandler;
 import moreExcercicesOfMyHead.Buy.Entities.Cliente;
 import moreExcercicesOfMyHead.Buy.Entities.Compra;
 import moreExcercicesOfMyHead.Buy.Entities.Produto;
 
-import java.lang.reflect.GenericDeclaration;
 import java.time.LocalDateTime;
 import java.util.Locale;
 import java.util.Scanner;
@@ -68,5 +66,7 @@ public class Principal {
         System.out.println("Nome do Produto " + produtos[idProdutoComprar].getNome());
         System.out.println("Tipo do Produto " + produtos[idProdutoComprar].getType());
         System.out.println("Data da compra: " + compra.getCreatedAt());
+
+        sc.close();
     }
 }
