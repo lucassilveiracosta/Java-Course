@@ -1,6 +1,5 @@
 package POO.boxNWrapperclass;
 
-import POO.boxNWrapperclass.Example;
 
 public class ClasseComWrapper {
     
