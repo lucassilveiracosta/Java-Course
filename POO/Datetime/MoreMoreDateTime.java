@@ -2,8 +2,6 @@ package POO.Datetime;
 
 import java.time.Duration;
 import java.time.LocalDate;
-import java.time.chrono.ChronoLocalDate;
-import java.util.Locale;
 
 public class MoreMoreDateTime {
 
@@ -13,5 +11,8 @@ public class MoreMoreDateTime {
 
         Duration days = Duration.between(pedido.atStartOfDay(), agora.atStartOfDay());
         System.out.println("Feliz " + days.toDays() + " dias de namorooooooo!!!!");
+        System.out.println("Feliz " + days.toHours() + " horas de namorooooooo!!!!");
+        System.out.println("Feliz " + days.toMinutes() + " minutos de namorooooooo!!!!");
+        System.out.println("Feliz " + days.toSeconds() + " segundos de namorooooooo!!!!");
     }
 }
