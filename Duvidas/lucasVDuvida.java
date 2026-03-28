@@ -1,4 +1,4 @@
-package algorithmsJava;
+package Duvidas;
 
 import java.util.Scanner;
 

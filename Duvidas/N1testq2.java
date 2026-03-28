@@ -1,4 +1,4 @@
-package algorithmsJava;
+package Duvidas;
 
 public class N1testq2 {
 
