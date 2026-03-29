@@ -6,6 +6,7 @@ import POO.Enumss.Exercicio1.Entities.Worker;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Locale;
@@ -29,7 +30,7 @@ public class Principal {
         System.out.print("Base salary: ");
         double bSalary = sc.nextInt();
 
-        Worker worker = new Worker(name, WorkerLevel.valueOf("level"), bSalary, depName);
+        Worker worker = new Worker(name, WorkerLevel.valueOf(level), bSalary, depName);
 
         System.out.print("How many contracts to this worker: ");
         int n = sc.nextInt();
@@ -50,5 +51,24 @@ public class Principal {
             worker.addContract(contract);
         }
 
+        System.out.print("Enter the month and the year to calculate the income (MM/yyyy): ");
+        String stringDateIncome = sc.next();
+        DateTimeFormatter fmt2 = DateTimeFormatter.ofPattern("MM/yyyy");
+        YearMonth dateIncome = YearMonth.parse(stringDateIncome, fmt2);
+        System.out.print("Name: ");
+        String nameIncome = sc.next();
+        System.out.print("Department: ");
+        String departmentIncome = sc.next();
+
+        int monthIncome = dateIncome.getMonthValue();
+        int yearIncome = dateIncome.getYear();
+
+        double total = worker.income(yearIncome, monthIncome);
+
+        System.out.println("Income for " + dateIncome.format(fmt2) + ": " + total);
+
+
+
+    sc.close();
     }
 }
