@@ -1,6 +1,8 @@
 package POO.Enumss.Exercicio1;
 
 import POO.Enumss.Exercicio1.Entities.Enums.WorkerLevel;
+import POO.Enumss.Exercicio1.Entities.HourContract;
+import POO.Enumss.Exercicio1.Entities.Worker;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -27,6 +29,8 @@ public class Principal {
         System.out.print("Base salary: ");
         double bSalary = sc.nextInt();
 
+        Worker worker = new Worker(name, WorkerLevel.valueOf("level"), bSalary, depName);
+
         System.out.print("How many contracts to this worker: ");
         int n = sc.nextInt();
 
@@ -35,10 +39,15 @@ public class Principal {
             System.out.printf("Enter contract #%d data: \n", i);
             System.out.print("Date (DD/MM/YYYY): ");
             String date = sc.next();
-
             LocalDate dataTrans = LocalDate.parse(date, fmt1);
+            System.out.print("Value per hour: ");
+            double valuePerHour = sc.nextDouble();
+            System.out.print("Duration (hours): ");
+            int duration = sc.nextInt();
 
+            HourContract contract = new HourContract(dataTrans, valuePerHour, duration);
 
+            worker.addContract(contract);
         }
 
     }

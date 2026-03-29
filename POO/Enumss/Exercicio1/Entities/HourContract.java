@@ -2,7 +2,6 @@ package POO.Enumss.Exercicio1.Entities;
 
 
 import java.time.LocalDate;
-import java.util.Date;
 
 
 public class HourContract {
