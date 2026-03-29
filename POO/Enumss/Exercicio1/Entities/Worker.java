@@ -2,6 +2,7 @@ package POO.Enumss.Exercicio1.Entities;
 
 import POO.Enumss.Exercicio1.Entities.Enums.WorkerLevel;
 
+import java.time.Month;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -20,6 +21,14 @@ public class Worker {
         this.name = name;
         this.workerLevel = workerLevel;
         this.baseSalary = baseSalary;
+        this.department = department;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public void setDepartment(String department) {
         this.department = department;
     }
 
@@ -57,13 +66,11 @@ public class Worker {
 
     public Double income(Integer year, Integer month) {
         double sum = baseSalary;
-        Calendar calendar = Calendar.getInstance();
 
         for( HourContract c: contract ) {
 
-            calendar.setTime(c.getDate());
-            int c_year = calendar.get(Calendar.YEAR);
-            int c_month = calendar.get(Calendar.MONTH); // manipulaçao calendar, revisar a aula
+            int c_year = c.getDate().getYear();
+            int c_month = c.getDate().getMonthValue();
 
             if(c_year == year && c_month == month) {
                 sum += c.totalValue();
