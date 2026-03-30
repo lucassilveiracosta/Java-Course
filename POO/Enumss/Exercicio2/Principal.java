@@ -4,7 +4,6 @@ import POO.Enumss.Exercicio2.Entities.Comment;
 import POO.Enumss.Exercicio2.Entities.Post;
 
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 
 public class Principal {
 
@@ -28,7 +27,6 @@ public class Principal {
 
         post2.addComment(comment3);
         post2.addComment(comment4);
-
 
         post1.printPost();
         System.out.println();
