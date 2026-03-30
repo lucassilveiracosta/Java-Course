@@ -1,6 +1,6 @@
 package POO.Enumss.Exercicio3.Entities.OrderStatus;
 
-public enum Status {
+public enum OrderStatus {
     PENDING_PAYMENT(0),
     PROCESSING(1),
     SHIPPING(2),
@@ -8,7 +8,7 @@ public enum Status {
 
     private final int codigo;
 
-    Status(int codigo) {
+    OrderStatus(int codigo) {
         this.codigo = codigo;
     }
 
