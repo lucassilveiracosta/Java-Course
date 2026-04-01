@@ -52,7 +52,7 @@ public class Principal {
 
 
         for (int i = 0; i < manyOrders; i++) {
-            System.out.println("Enter #" + i + 1 + " item data: ");
+            System.out.println("Enter #" + ( i + 1 )+ " item data: ");
             System.out.print("Product name: ");
             String productName = sc.next();
 
