@@ -23,6 +23,18 @@ public class Order {
         items.remove(orderItem);
     }
 
+    public void printJsonFormatOrderItems() {
+        for(OrderItem x: this.items) {
+            System.out.println("{");
+            System.out.println("  'Name': " + x.getProdutc().getName());
+            System.out.println("  'Price': " + x.getProdutc().getPrice());
+            System.out.println("  'Quantity': " + x.getQuantity());
+            System.out.println("  'TotalPrice': " + x.getPrice());
+            System.out.println("}\n");
+        }
+        System.out.println("Total Price: " + this.total());
+    }
+
     public Double total() {
         double sumPrices = 0;
         for(OrderItem x: items) {
