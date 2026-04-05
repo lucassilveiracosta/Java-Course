@@ -1,5 +1,8 @@
 package algorithmsJava;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.Locale;
 import java.util.Scanner;
 
 public class insertionSort {
@@ -15,6 +18,8 @@ public class insertionSort {
             System.out.printf("vect[%d]: ", i);
             vect[i] = sc.nextInt();
         }
+
+        LocalDateTime antes = LocalDateTime.now();
 
         for(int j = 1; j < n; j++) { // 0 -> 4
 
@@ -34,9 +39,13 @@ public class insertionSort {
             }
         }
 
+        LocalDateTime depois = LocalDateTime.now();
+
+        Duration tt = Duration.ofDays(Duration.between(antes, depois).toMillis());
         for(int i = 0; i < n; i++) {
             System.out.println(vect[i]);
         }
+        System.out.println(tt);
         sc.close();
     }
 }
