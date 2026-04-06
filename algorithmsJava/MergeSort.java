@@ -59,18 +59,13 @@ public class MergeSort {
 
     static void main(String[] args) {
 
-        LocalDateTime antes = LocalDateTime.now();
         int[] array = { 9, 7, 8, 4, 6, 5, 1, 3};
 
         mergeSort(0, array.length, array);
 
-        LocalDateTime depois = LocalDateTime.now();
 
         for (int i = 0; i < array.length; i++) {
             System.out.println(array[i]);
         }
-
-        Duration tt = Duration.ofDays(Duration.between(antes, depois).toMillis());
-        System.out.println(tt);
     }
 }
