@@ -1,7 +1,7 @@
 package EstruturaDeDados;
 
+import java.io.IOException;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Pilha {
@@ -17,7 +17,8 @@ public class Pilha {
     }
 
     public void pop() {
-        if(ultimoElemento >= 0) {
+        if(ultimoElemento
+                >= 0) {
             vetor[ultimoElemento] = null;
             ultimoElemento--;
         }
@@ -36,7 +37,7 @@ public class Pilha {
         }
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         Scanner sc = new Scanner(System.in);
         Integer[] vetor = {1, 2, 3, 4, 5, null, null, null, null, null};
         Integer tam = 10;
