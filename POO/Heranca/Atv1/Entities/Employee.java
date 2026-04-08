@@ -41,6 +41,6 @@ public class Employee {
     }
 
     public void printPayments() {
-        System.out.println(this.name + " - $ " + this.payment());
+        System.out.printf("%s - $ %.2f\n", this.getName(), this.payment());
     }
 }
