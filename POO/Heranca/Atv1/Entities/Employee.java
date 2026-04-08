@@ -39,4 +39,8 @@ public class Employee {
     public Double payment() {
         return hours * valuePerHour;
     }
+
+    public void printPayments() {
+        System.out.println(this.name + " - $ " + this.payment());
+    }
 }
