@@ -1,4 +1,4 @@
-package POO.Heranca.Entities;
+package POO.Heranca.Normal.Entities;
 
 public class BusinessAccount extends Account {
 

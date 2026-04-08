@@ -1,8 +1,8 @@
-package POO.Heranca;
+package POO.Heranca.Normal;
 
-import POO.Heranca.Entities.Account;
-import POO.Heranca.Entities.BusinessAccount;
-import POO.Heranca.Entities.SavingsAccount;
+import POO.Heranca.Normal.Entities.Account;
+import POO.Heranca.Normal.Entities.BusinessAccount;
+import POO.Heranca.Normal.Entities.SavingsAccount;
 
 public class Principal {
 
