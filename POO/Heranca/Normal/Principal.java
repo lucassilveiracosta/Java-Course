@@ -1,8 +1,8 @@
 package POO.Heranca.Normal;
 
-import POO.Heranca.Normal.Entities.Account;
-import POO.Heranca.Normal.Entities.BusinessAccount;
-import POO.Heranca.Normal.Entities.SavingsAccount;
+import POO.Heranca.Overridee.Entities.Account;
+import POO.Heranca.Overridee.Entities.BusinessAccount;
+import POO.Heranca.Overridee.Entities.SavingsAccount;
 
 public class Principal {
 
