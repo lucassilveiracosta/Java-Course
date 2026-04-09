@@ -6,7 +6,6 @@ public class Circle extends Shape{
 
     protected Double radius;
 
-    private final Double pi = Math.PI;
 
     public Circle(Color color, Double radius) {
         super(color);
