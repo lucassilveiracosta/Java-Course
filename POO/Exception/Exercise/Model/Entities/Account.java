@@ -51,6 +51,9 @@ public class Account {
         if(amount > withDrawLimit) {
             throw new AccountException("Withdraw error: The amount exceeds the withdraw limit");
         }
+        if(amount > balance) {
+            throw new AccountException("Withdraw error: Not enough balance");
+        }
 
         this.balance -= amount;
     }
