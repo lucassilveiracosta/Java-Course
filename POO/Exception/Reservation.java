@@ -1,8 +1,16 @@
 package POO.Exception;
 
+import POO.Exception.exceptions.ReservationException;
+import com.sun.source.tree.ParenthesizedTree;
+
+import java.text.ParseException;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
+import java.util.Formatter;
+import java.util.Scanner;
 
 public class Reservation {
     private Integer roomNumber;
@@ -44,30 +52,61 @@ public class Reservation {
         return (int) duration.toDays();
     }
 
-    public void updateDates(LocalDate checkin, LocalDate checkout) {
-        try {
-            if (duration(checkin, checkout) > 0 && checkin.atStartOfDay().isAfter(LocalDate.now().atStartOfDay()) && checkout.isAfter(LocalDate.now())) {
-                this.checkin = checkin;
-                this.checkout = checkout;
-            }
+    public void updateDates(LocalDate checkin, LocalDate checkout) throws ReservationException {
+        if(checkin.isBefore(LocalDate.now()) || checkout.isBefore(LocalDate.now())){
+            throw new ReservationException("You cannot update to a day before today");
         }
-        catch (RuntimeException e) {
-            e.printStackTrace();
+
+        if(checkin.isAfter(checkout)) {
+            throw new ReservationException("The check-in date must be before check-out date");
         }
+
+        this.checkin = checkin;
+        this.checkout = checkout;
+    }
+
+    public String toString(DateTimeFormatter fmt) {
+        return "Room: "
+            + roomNumber
+            + "\nCheck-In: "
+            + checkin.format(fmt)
+            + "\nCheck-Out: "
+            + checkout.format(fmt)
+            + "\nDays: "
+            + duration();
     }
 
     static void main(String[] args) {
-        LocalDate dateIn = LocalDate.of(2026, 6, 2);
-        LocalDate dateOut = LocalDate.of(2026, 6, 5);
-        Reservation reservation = new Reservation(14, dateIn, dateOut);
 
-        System.out.println(reservation.duration());
+        try {
+            Scanner sc = new Scanner(System.in);
+            System.out.print("Room number: ");
+            int roomNumber = sc.nextInt();
+            DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+            System.out.print("Enter check-in date (dd/mm/yyyy): ");
+            LocalDate checkIn = LocalDate.parse(sc.next(), fmt);
+            System.out.print("Enter check-out date (dd/mm/yyyy): ");
+            LocalDate checkOut = LocalDate.parse(sc.next(), fmt);
+            Reservation reservation = new Reservation(roomNumber, checkIn, checkOut);
+            System.out.println(reservation.toString(fmt));
 
-        LocalDate dateIn1 = LocalDate.of(2026, 6, 2);
-        LocalDate dateOut1 = LocalDate.of(2026, 7, 5);
+            System.out.println();
+            System.out.println();
+            System.out.println("Enter update data: ");
+            System.out.print("Enter check-in date (dd/mm/yyyy): ");
+            checkIn = LocalDate.parse(sc.next(), fmt);
+            System.out.print("Enter check-out date (dd/mm/yyyy): ");
+            checkOut = LocalDate.parse(sc.next(), fmt);
+            reservation.updateDates(checkIn, checkOut);
+            System.out.println(reservation.toString(fmt));
 
-        reservation.updateDates(dateIn1, dateOut1);
-        System.out.println(reservation.duration());
+        }
+        catch (ReservationException e) {
+            System.out.println(e.getMessage());
+        }
+        catch (DateTimeParseException e) {
+            System.out.println("Date in invalid format");
+        }
 
     }
 }
