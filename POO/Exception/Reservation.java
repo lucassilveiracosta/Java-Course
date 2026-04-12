@@ -110,6 +110,9 @@ public class Reservation {
         catch (DateTimeParseException e) {
             System.out.println("Date in invalid format");
         }
+        catch (RuntimeException e) {
+            System.out.println("Unexpected error");
+        }
 
     }
 }
