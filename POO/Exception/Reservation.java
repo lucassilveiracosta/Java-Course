@@ -44,11 +44,6 @@ public class Reservation {
         return (int) duration.toDays();
     }
 
-    private int duration(LocalDate checkin, LocalDate checkout) {
-        Duration duration = Duration.between(checkin.atStartOfDay(), checkout.atStartOfDay());
-        return (int) duration.toDays();
-    }
-
     public void updateDates(LocalDate checkin, LocalDate checkout) {
         try {
             if (duration(checkin, checkout) > 0 && checkin.atStartOfDay().isAfter(LocalDate.now().atStartOfDay()) && checkout.isAfter(LocalDate.now())) {
