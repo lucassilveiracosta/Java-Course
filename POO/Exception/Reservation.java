@@ -17,7 +17,10 @@ public class Reservation {
     private LocalDate checkin;
     private LocalDate checkout;
 
-    public Reservation(Integer roomNumber, LocalDate checkin, LocalDate checkout) {
+    public Reservation(Integer roomNumber, LocalDate checkin, LocalDate checkout) throws ReservationException{
+        if(checkin.isAfter(checkout)){
+            throw new ReservationException("The check-in date must be before check-out date");
+        }
         this.roomNumber = roomNumber;
         this.checkin = checkin;
         this.checkout = checkout;
