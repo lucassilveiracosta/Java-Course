@@ -23,6 +23,10 @@ public class Account {
         this.number = number;
     }
 
+    public Double getBalance() {
+        return balance;
+    }
+
     public String getHolder() {
         return holder;
     }
