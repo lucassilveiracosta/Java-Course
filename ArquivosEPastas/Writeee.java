@@ -10,7 +10,7 @@ public class Writeee {
         String[] lines = new String[] { "Good Morning", "Good Afternoon", "Good Night"};
         String path = "C:\\Users\\lscos\\OneDrive\\Documentos\\Projetos Internos\\Hands-on-Java\\ArquivosEPastas\\out.txt";
 
-        try (BufferedWriter bw = new BufferedWriter( new FileWriter(path))){
+        try (BufferedWriter bw = new BufferedWriter( new FileWriter(path, true))){
             for (String line: lines) {
                 bw.write(line);
                 bw.newLine();
