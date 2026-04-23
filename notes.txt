@@ -1,4 +1,4 @@
 Para que um arquivo Java seja executável, ele deve ter um
 
--->  Public static void main(String[] args) {}
+-->  public static void main(String[] args) {}
 
