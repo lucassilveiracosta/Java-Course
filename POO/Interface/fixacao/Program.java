@@ -11,7 +11,7 @@ public class Program {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
 
-        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+        DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
         System.out.println("Entre os dados do contrato: ");
         System.out.print("Numero: ");
@@ -25,5 +25,11 @@ public class Program {
 
         System.out.print("Entre com os numeros de parcelas: ");
         int n = sc.nextInt();
+
+        ContractService contractService = new ContractService(null);
+
+        contractService.processContract(contract, n);
+
+        sc.close();
     }
 }
