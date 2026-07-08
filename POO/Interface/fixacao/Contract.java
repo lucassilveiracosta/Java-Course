@@ -1,18 +1,18 @@
 package POO.Interface.fixacao;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Contract {
     private Integer number;
     private LocalDate date;
     private Double totalValue;
-    private Installments installments;
+    private ArrayList<Installments> installments;
 
-    public Contract(Integer number, LocalDate date, Double totalValue, Installments installments) {
+    public Contract(Integer number, LocalDate date, Double totalValue) {
         this.number = number;
         this.date = date;
         this.totalValue = totalValue;
-        this.installments = installments;
     }
 
     public Integer getNumber() {
@@ -39,11 +39,7 @@ public class Contract {
         this.totalValue = totalValue;
     }
 
-    public Installments getInstallments() {
+    public ArrayList<Installments> getInstallments() {
         return installments;
-    }
-
-    public void setInstallments(Installments installments) {
-        this.installments = installments;
     }
 }
