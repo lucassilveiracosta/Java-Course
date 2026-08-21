@@ -30,6 +30,11 @@ public class Program {
 
         contractService.processContract(contract, n);
 
+        System.out.println("Parcelas: ");
+        for (Installments i: contract.getInstallments()) {
+            System.out.println(i);
+        }
+
         sc.close();
     }
 }
